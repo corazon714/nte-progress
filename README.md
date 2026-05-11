@@ -110,23 +110,6 @@ pnpm exec tauri icon src-tauri/icons/app-icon.png
 
 ---
 
-## Releasing
-
-Local build → upload to GitHub Releases manually.
-
-```sh
-pnpm release 0.2.0          # bumps package.json, tauri.conf.json, Cargo.toml + Cargo.lock
-pnpm tauri build            # produces installers in src-tauri/target/release/bundle/
-git add -A
-git commit -m "chore: release v0.2.0"
-git tag v0.2.0
-git push && git push --tags
-```
-
-Then on GitHub: **Releases → Draft a new release**, pick the tag, drag in the installers from `src-tauri/target/release/bundle/` (`.msi`, `.exe`, `.dmg`, `.deb`, `.AppImage` depending on platform), publish.
-
----
-
 ## Roadmap
 
 - Banner / event calendar with auto-surfacing on Dashboard
