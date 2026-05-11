@@ -1,0 +1,142 @@
+[
+    {
+        "id": "tip_pixels_cap",
+        "title": "Never let Character Pixels cap",
+        "category": "Mistakes",
+        "body": "Stamina **stops generating** at max (240 base). Spend before logging off — every overflow point is wasted. Set a phone reminder if needed.",
+        "tags": [
+            "stamina",
+            "daily"
+        ]
+    },
+    {
+        "id": "tip_city_stamina",
+        "title": "City Stamina = pure Fons, weekly",
+        "category": "Economy",
+        "body": "City Stamina does **NOT** regen daily — it caps and resets every Monday. 1 Stamina = 1,000 Fons regardless of activity. Fastest = City Delivery. Best for Beetle Coins = Fishing (Lvl 10+).",
+        "tags": [
+            "fons",
+            "weekly"
+        ]
+    },
+    {
+        "id": "tip_solid_dice",
+        "title": "Solid Dice = 100% featured at pity",
+        "category": "Pulls",
+        "body": "Limited banner has **no 50/50** — every S at pity is the featured character. Save Solid Dice for Limited only. Board Modification at 70 raises S-rate to 19.59%.",
+        "tags": [
+            "banners",
+            "limited"
+        ]
+    },
+    {
+        "id": "tip_arc_buy",
+        "title": "Buy Arcs with Tri-Keys, don't roll",
+        "category": "Pulls",
+        "body": "25 Tri-Keys = any specific S-Class Arc. Direct purchase. Never blind-roll the Arc banner unless you're already at 25.",
+        "tags": [
+            "arcs",
+            "tri-key"
+        ]
+    },
+    {
+        "id": "tip_chiz_free",
+        "title": "Chiz is fully free — never spend dice",
+        "category": "Pulls",
+        "body": "Chiz unlocks via City Tycoon level rewards, **all 6 awakenings included**. She's the strongest free character — never pull for her.",
+        "tags": [
+            "free",
+            "chiz"
+        ]
+    },
+    {
+        "id": "tip_jiuyuan_a2",
+        "title": "Jiuyuan A2 = team heal pivot",
+        "category": "Pulls",
+        "body": "If you own Jiuyuan, her A2 awakening turns her into a sub-healer. The single highest-value standard awakening in the game.",
+        "tags": [
+            "awakening",
+            "jiuyuan"
+        ]
+    },
+    {
+        "id": "tip_anomaly_pilgrim",
+        "title": "Anomaly Pilgrimage is THE bottleneck",
+        "category": "Mistakes",
+        "body": "3 boss attempts/week, hard cap. Esper Skill materials drop only here. Missing a week = permanent skill upgrade delay.",
+        "tags": [
+            "weekly",
+            "skills"
+        ]
+    },
+    {
+        "id": "tip_witch",
+        "title": "Witch's House has no in-game reminder",
+        "category": "Mistakes",
+        "body": "3 fortune draws/day, completely unmarked. Set a habit: open daily before Pixel runs. Treasure Hunts give Oracle Stones → milestone Annulith.",
+        "tags": [
+            "daily",
+            "annulith"
+        ]
+    },
+    {
+        "id": "tip_cartridge",
+        "title": "Don't farm Cartridges before Hunter Lv 30",
+        "category": "Combat",
+        "body": "S-rank Cartridges and Hard Rewind unlock at Lv 30. Earlier pieces become outdated. Don't upgrade past +5 without verifying sub-stats.",
+        "tags": [
+            "gear",
+            "rabbit hole"
+        ]
+    },
+    {
+        "id": "tip_lost_no_fons",
+        "title": "Don't buy Fons from Lost Exchange",
+        "category": "Mistakes",
+        "body": "The Fons rate is heavily inflated vs. pull value. Always prioritize Solid Dice → Fabricated Dice → Tri-Keys.",
+        "tags": [
+            "shop",
+            "lost-pieces"
+        ]
+    },
+    {
+        "id": "tip_mammon_scale",
+        "title": "Realm of Greed scales with your level",
+        "category": "Economy",
+        "body": "Don't rush Mammon at low level — payout grows substantially as you level. Upgrade Blind Mammon weekly via Auction House (Gluttonous Eyes / Covetous Coins).",
+        "tags": [
+            "fons",
+            "weekly"
+        ]
+    },
+    {
+        "id": "tip_team_cycle",
+        "title": "Build around the Esper Cycle, not rainbow",
+        "category": "Combat",
+        "body": "Random teams waste Esper Meter. Pick **neighboring elements** for Duo reactions, or full trios (Top: Lakshana+Cosmos+Anima → Charged; Bottom: Incantation+Chaos+Psyche → Discord).",
+        "tags": [
+            "team",
+            "elements"
+        ]
+    },
+    {
+        "id": "tip_codes",
+        "title": "Codes expire without warning",
+        "category": "Economy",
+        "body": "Redeem all current codes ASAP after a livestream or patch. Each gives ~50–100 Annulith on average. Settings → Redeem Code (after Episode 0).",
+        "tags": [
+            "codes",
+            "annulith"
+        ]
+    },
+    {
+        "id": "tip_pink_paws",
+        "title": "Pink Paws Heist resets every 14 days",
+        "category": "Economy",
+        "body": "Not weekly! Track the cap counter in-game. Avoid combat (every HP loss costs Fons). Extract on the '!' marker.",
+        "tags": [
+            "fons",
+            "biweekly"
+        ]
+    }
+]

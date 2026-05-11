@@ -1,0 +1,160 @@
+[
+    {
+        "id": "sakiri",
+        "name": "Sakiri",
+        "rarity": "S",
+        "element": "Incantation",
+        "role": "Support",
+        "source": "Standard",
+        "notes": "Best offensive support. ATK% buff after ult.",
+        "recommendedArc": "support_atk"
+    },
+    {
+        "id": "nanally",
+        "name": "Nanally",
+        "rarity": "S",
+        "element": "Anima",
+        "role": "DPS",
+        "source": "Limited",
+        "notes": "First Limited. Highest raw DPS.",
+        "recommendedArc": "raging_flames"
+    },
+    {
+        "id": "chiz",
+        "name": "Chiz",
+        "rarity": "S",
+        "element": "Cosmos",
+        "role": "DPS",
+        "source": "Free",
+        "notes": "Free + all 6 awakenings via City Tycoon. Never spend dice.",
+        "recommendedArc": "cosmos_dps"
+    },
+    {
+        "id": "jiuyuan",
+        "name": "Jiuyuan",
+        "rarity": "S",
+        "element": "Anima",
+        "role": "Sub-DPS",
+        "source": "Standard",
+        "notes": "A2 unlocks team heal — highest-value standard awakening.",
+        "recommendedArc": "raging_flames"
+    },
+    {
+        "id": "baicang",
+        "name": "Baicang",
+        "rarity": "S",
+        "element": "Incantation",
+        "role": "DPS",
+        "source": "Standard",
+        "notes": "DoT-focused. Pairs with Adler/Daffodill (Discord).",
+        "recommendedArc": "incant_dot"
+    },
+    {
+        "id": "haniel",
+        "name": "Haniel",
+        "rarity": "A",
+        "element": "Psyche",
+        "role": "Support",
+        "source": "Standard",
+        "notes": "A-class buffer. Sakiri budget alternative."
+    },
+    {
+        "id": "esper_zero",
+        "name": "Esper Zero",
+        "rarity": "S",
+        "element": "Cosmos",
+        "role": "DPS",
+        "source": "Free",
+        "notes": "MC. Instant Cycle mechanic. Free via story."
+    },
+    {
+        "id": "hathor",
+        "name": "Hathor",
+        "rarity": "S",
+        "element": "Lakshana",
+        "role": "Utility",
+        "source": "Standard",
+        "notes": "Hamster Ball furniture = +1 free Module per day."
+    },
+    {
+        "id": "fadia",
+        "name": "Fadia",
+        "rarity": "S",
+        "element": "Psyche",
+        "role": "Sustain",
+        "source": "Standard",
+        "notes": "DMG redirect tank. Niche."
+    },
+    {
+        "id": "mint",
+        "name": "Mint",
+        "rarity": "A",
+        "element": "Anima",
+        "role": "DPS",
+        "source": "Standard",
+        "notes": "Air dash mobility. Mid-tier DPS."
+    },
+    {
+        "id": "adler",
+        "name": "Adler",
+        "rarity": "A",
+        "element": "Incantation",
+        "role": "Support",
+        "source": "Standard",
+        "notes": "Shield + DoT. Synergy with Baicang."
+    },
+    {
+        "id": "daffodill",
+        "name": "Daffodill",
+        "rarity": "A",
+        "element": "Chaos",
+        "role": "DPS",
+        "source": "Standard",
+        "notes": "Nerfed pre-launch. Still solid."
+    },
+    {
+        "id": "skia",
+        "name": "Skia",
+        "rarity": "A",
+        "element": "Lakshana",
+        "role": "DPS",
+        "source": "Standard",
+        "notes": "Wall climb traversal."
+    },
+    {
+        "id": "edgar",
+        "name": "Edgar",
+        "rarity": "A",
+        "element": "Cosmos",
+        "role": "Support",
+        "source": "Standard",
+        "notes": "Affection R10 = weekly reward. Gift first."
+    },
+    {
+        "id": "aurelia",
+        "name": "Aurelia",
+        "rarity": "S",
+        "element": "Psyche",
+        "role": "DPS",
+        "source": "Standard",
+        "notes": "TBD post-launch."
+    },
+    {
+        "id": "lacrimosa",
+        "name": "Lacrimosa",
+        "rarity": "S",
+        "element": "Chaos",
+        "role": "DPS",
+        "source": "Standard",
+        "notes": "Copy enemy abilities. Post-launch."
+    },
+    {
+        "id": "hotori",
+        "name": "Hotori",
+        "rarity": "S",
+        "element": "Cosmos",
+        "role": "Sub-DPS",
+        "source": "Standard",
+        "notes": "TBD post-launch."
+    }
+]

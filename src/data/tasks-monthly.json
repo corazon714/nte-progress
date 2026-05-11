@@ -1,0 +1,64 @@
+[
+    {
+        "id": "lost_exchange",
+        "title": "Lost Exchange — buy pulls FIRST",
+        "scope": "monthly",
+        "priority": "critical",
+        "description": "Spend Lost Pieces before reset. Priority: Solid Dice → Fabricated Dice → Tri-Keys. Never buy Fons here.",
+        "rewards": [
+            "Solid/Fabricated Dice",
+            "Tri-Keys"
+        ]
+    },
+    {
+        "id": "warp_exchange",
+        "title": "Warp Exchange decision",
+        "scope": "monthly",
+        "priority": "high",
+        "description": "No reset, but review monthly. 720 Warp Pieces = 1 standard char OR 30 Limited pulls OR 120k Fons per pull-equivalent.",
+        "rewards": [
+            "Standard char OR pulls OR Fons"
+        ]
+    },
+    {
+        "id": "arc_selection",
+        "title": "Arc Selection Shop (25 Tri-Keys = any S-Arc)",
+        "scope": "monthly",
+        "priority": "high",
+        "description": "Refreshes monthly. Direct buy any S-Class Arc for 25 Tri-Keys — never roll the Arc banner blind.",
+        "rewards": [
+            "S-Class Arc"
+        ]
+    },
+    {
+        "id": "hunter_exchange",
+        "title": "Hunter Exchange (Fons → Annulith)",
+        "scope": "monthly",
+        "priority": "medium",
+        "description": "Unlocks via Tycoon level. Only use after Fons income is stable.",
+        "rewards": [
+            "Annulith",
+            "Pool currencies"
+        ]
+    },
+    {
+        "id": "rails_clear",
+        "title": "Beyond the Rails — clear before patch",
+        "scope": "monthly",
+        "priority": "medium",
+        "description": "Special Routes rotate with each version. Claim all Platform Seal Annulith before maintenance.",
+        "rewards": [
+            "Annulith"
+        ]
+    },
+    {
+        "id": "pink_paws_2nd",
+        "title": "Pink Paws Heist — 2nd biweekly cycle",
+        "scope": "monthly",
+        "priority": "medium",
+        "description": "~2 cycles per month. Track in-game cap counter to know when it resets.",
+        "rewards": [
+            "1,000,000 Fons cap × 2"
+        ]
+    }
+]

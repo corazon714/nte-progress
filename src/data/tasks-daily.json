@@ -1,0 +1,151 @@
+[
+    {
+        "id": "spend_pixels",
+        "title": "Spend all Character Pixels",
+        "scope": "daily",
+        "priority": "critical",
+        "description": "Stamina regenerates 1 per 6 minutes (240/day). Cap stops generation. Run highest Rabbit Hole or Anomaly Zone difficulty available.",
+        "rewards": [
+            "Cartridges",
+            "Modules",
+            "Hunter Guides",
+            "Arc materials"
+        ]
+    },
+    {
+        "id": "claim_login",
+        "title": "Claim login + event rewards",
+        "scope": "daily",
+        "priority": "critical",
+        "description": "Open the Event page and claim everything. Streak bonuses break if you miss a day. Check active redeem codes too.",
+        "rewards": [
+            "Annulith",
+            "Event currency"
+        ]
+    },
+    {
+        "id": "daily_quests",
+        "title": "Daily Quests (Activity 100)",
+        "scope": "daily",
+        "priority": "critical",
+        "description": "Exploration Guide → Participation Tasks. Reach Activity 100 for the full premium daily payout.",
+        "rewards": [
+            "Fons",
+            "Beetle Coins",
+            "60 Annulith",
+            "Dreamless Seeds"
+        ]
+    },
+    {
+        "id": "circle_bounty",
+        "title": "Circle Bounty (Battle Pass)",
+        "scope": "daily",
+        "priority": "critical",
+        "description": "Claim daily Circle Bounty EXP and collect level rewards. Target 12,000 EXP/week.",
+        "rewards": [
+            "BP rewards"
+        ]
+    },
+    {
+        "id": "cafe",
+        "title": "Manage Café by Origen",
+        "scope": "daily",
+        "priority": "high",
+        "description": "Collect earnings, restock 24h/72h depending on schedule. ~4,800+ Fons/day baseline.",
+        "rewards": [
+            "Fons"
+        ]
+    },
+    {
+        "id": "nacupeda",
+        "title": "Nacupeda's Pool Blessing",
+        "scope": "daily",
+        "priority": "high",
+        "description": "Bridge Crossing fountain. Sincere Wish for Mhm! Coins. Buff also boosts Fons income — do early.",
+        "rewards": [
+            "6–8 Mhm! Coins",
+            "Fons buff"
+        ]
+    },
+    {
+        "id": "witch_house",
+        "title": "Fortune Reading at Witch's House (×3)",
+        "scope": "daily",
+        "priority": "high",
+        "description": "Southwest of Hankaku Street. 3 draws/day → Bless / Treasure Hunt / Lost Tales. Unmarked, easy to miss.",
+        "rewards": [
+            "Combat buff",
+            "Annulith via Oracle Stones"
+        ]
+    },
+    {
+        "id": "gifts",
+        "title": "Give 10 gifts to characters",
+        "scope": "daily",
+        "priority": "high",
+        "description": "Cap 10/day, max 3/character. Edgar first (R10 = weekly reward). Use Fluffy Cotton from Boom Boom Cloud (400 Affection).",
+        "rewards": [
+            "Affection"
+        ],
+        "requires": [
+            "edgar"
+        ]
+    },
+    {
+        "id": "chiz_fons",
+        "title": "Farm Fons with Chiz",
+        "scope": "daily",
+        "priority": "medium",
+        "description": "Hold Chiz basic attack on enemies. 40k/day cap; 250k–500k lifetime cap.",
+        "rewards": [
+            "Fons"
+        ],
+        "requires": [
+            "chiz"
+        ]
+    },
+    {
+        "id": "hamster_module",
+        "title": "Claim free daily Module (Hathor Hamster Ball)",
+        "scope": "daily",
+        "priority": "medium",
+        "description": "Track Little Melon Seeds → Haunted Vending Machines → upgrade Hamster Ball → claim Module.",
+        "rewards": [
+            "1 Module/day"
+        ],
+        "requires": [
+            "hathor"
+        ]
+    },
+    {
+        "id": "bond",
+        "title": "Date / map bond encounters",
+        "scope": "daily",
+        "priority": "medium",
+        "description": "Cinema/Ferris Wheel = +200 bond. 3 map bond encounters/day for additional bond EXP.",
+        "rewards": [
+            "Bond EXP",
+            "Skin unlocks"
+        ]
+    },
+    {
+        "id": "fortune_tree",
+        "title": "Pray at Fortune Shades Tree",
+        "scope": "daily",
+        "priority": "optional",
+        "description": "Yuanmu Hill (far east). Optional affinity activity.",
+        "rewards": [
+            "Minor passive"
+        ]
+    },
+    {
+        "id": "bust_illegal",
+        "title": "Bust illegal activities",
+        "scope": "daily",
+        "priority": "optional",
+        "description": "Open-world patrol. Daily limited Fons + side materials.",
+        "rewards": [
+            "Fons"
+        ]
+    }
+]
