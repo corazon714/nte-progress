@@ -13,7 +13,8 @@ const DEFAULT: UserProfile = {
         { id: "chiz", awakening: 0 },
     ],
     ownedArcs: [],
-    stamina: { current: 0, cap: 240 },
+    characterPixels: { current: 0, cap: 240 },
+    cityStamina: { current: 0, cap: 180 },
     spendingProfile: "F2P",
 };
 
@@ -23,7 +24,12 @@ export const useUserStore = defineStore("user", () => {
 
     async function load() {
         const stored = await loadKey<UserProfile>("userProfile", DEFAULT);
-        profile.value = { ...DEFAULT, ...stored, stamina: { ...DEFAULT.stamina, ...stored.stamina } };
+        profile.value = {
+            ...DEFAULT,
+            ...stored,
+            characterPixels: { ...DEFAULT.characterPixels, ...(stored as Partial<UserProfile>).characterPixels },
+            cityStamina: { ...DEFAULT.cityStamina, ...(stored as Partial<UserProfile>).cityStamina },
+        };
         loaded.value = true;
         watch(profile, (v) => saveKey("userProfile", v), { deep: true });
     }

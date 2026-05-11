@@ -15,6 +15,7 @@ const DEFAULT: CurrencyState = {
     mhmCoins: 0,
     pity: { limited: 0, standard: 0, arcS: 0, arcFeatured: 0 },
     claimedCodes: {},
+    incomeLog: [],
 };
 
 export const useCurrencyStore = defineStore("currency", () => {
@@ -28,6 +29,7 @@ export const useCurrencyStore = defineStore("currency", () => {
             ...stored,
             pity: { ...DEFAULT.pity, ...(stored.pity ?? {}) },
             claimedCodes: { ...(stored.claimedCodes ?? {}) },
+            incomeLog: Array.isArray(stored.incomeLog) ? [...stored.incomeLog] : [],
         };
         loaded.value = true;
         watch(state, (v) => saveKey("currency", v), { deep: true });
@@ -38,5 +40,17 @@ export const useCurrencyStore = defineStore("currency", () => {
         else delete state.value.claimedCodes[code];
     }
 
-    return { state, loaded, load, setClaimed };
+    function logIncome(weekStartIso: string, gained: number) {
+        const list = state.value.incomeLog.filter((e) => e.weekStartIso !== weekStartIso);
+        list.push({ weekStartIso, gained });
+        list.sort((a, b) => a.weekStartIso.localeCompare(b.weekStartIso));
+        // keep last 26 weeks
+        state.value.incomeLog = list.slice(-26);
+    }
+
+    function removeIncome(weekStartIso: string) {
+        state.value.incomeLog = state.value.incomeLog.filter((e) => e.weekStartIso !== weekStartIso);
+    }
+
+    return { state, loaded, load, setClaimed, logIncome, removeIncome };
 });

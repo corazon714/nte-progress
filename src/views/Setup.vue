@@ -73,10 +73,19 @@ const regions: Region[] = ["EU", "Asia", "US"];
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-3 gap-4">
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-nte-muted mb-2">Stamina cap</label>
-                    <input class="input" type="number" min="240" max="500" v-model.number="user.profile.stamina.cap" />
+                    <label class="block text-xs uppercase tracking-wider text-nte-muted mb-2">Character Pixels
+                        cap</label>
+                    <input class="input" type="number" min="240" max="500"
+                        v-model.number="user.profile.characterPixels.cap" />
+                    <p class="text-[11px] text-nte-muted mt-1">Combat stamina · regens 6 min/point.</p>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-nte-muted mb-2">City Stamina cap</label>
+                    <input class="input" type="number" min="60" max="400"
+                        v-model.number="user.profile.cityStamina.cap" />
+                    <p class="text-[11px] text-nte-muted mt-1">Weekly · resets Monday, no daily regen.</p>
                 </div>
                 <div>
                     <label class="block text-xs uppercase tracking-wider text-nte-muted mb-2">Spending profile</label>
@@ -102,7 +111,7 @@ const regions: Region[] = ["EU", "Asia", "US"];
                         <span class="font-display font-semibold">{{ c.name }}</span>
                         <span class="tag"
                             :class="c.rarity === 'S' ? 'text-nte-gold border-nte-gold' : 'text-nte-cyan border-nte-cyan'">{{
-                            c.rarity }}</span>
+                                c.rarity }}</span>
                     </div>
                     <div class="mt-1 flex items-center gap-2">
                         <ElementTag :element="c.element" />

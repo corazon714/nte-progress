@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "nte-progress",
+  "productName": "NTE Progress",
   "version": "0.1.0",
   "identifier": "com.corazon714.nte-progress",
   "build": {

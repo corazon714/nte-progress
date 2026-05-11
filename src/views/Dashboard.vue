@@ -37,16 +37,26 @@ const criticalWeeklyOpen = computed(() =>
     weeklyTasks.filter((t) => t.priority === "critical" && !checklist.isDone("weekly", t.id)),
 );
 
-// Stamina overflow projection
-const STAMINA_REGEN_MIN_PER_POINT = 6;
-const hoursToCap = computed(() => {
-    const left = Math.max(0, user.profile.stamina.cap - user.profile.stamina.current);
-    return (left * STAMINA_REGEN_MIN_PER_POINT) / 60;
+// Character Pixels overflow projection (regenerating combat stamina)
+const PIXELS_REGEN_MIN_PER_POINT = 6;
+const pixelsHoursToCap = computed(() => {
+    const left = Math.max(0, user.profile.characterPixels.cap - user.profile.characterPixels.current);
+    return (left * PIXELS_REGEN_MIN_PER_POINT) / 60;
 });
-const staminaWarn = computed(() => hoursToCap.value <= settings.state.staminaWarnHours);
-const spendBy = computed(() => {
-    const d = new Date(Date.now() + hoursToCap.value * 3600_000);
+const pixelsWarn = computed(() => pixelsHoursToCap.value <= settings.state.staminaWarnHours);
+const pixelsSpendBy = computed(() => {
+    const d = new Date(Date.now() + pixelsHoursToCap.value * 3600_000);
     return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+});
+
+// City Stamina — weekly resource, doesn't regen daily, resets Monday.
+const cityStaminaPct = computed(() => {
+    const cap = user.profile.cityStamina.cap || 1;
+    return Math.min(100, Math.round((user.profile.cityStamina.current / cap) * 100));
+});
+const citySpendCritical = computed(() => {
+    const ms = weeklyTimer.remainingMs.value;
+    return user.profile.cityStamina.current > 0 && ms > 0 && ms < 12 * 60 * 60 * 1000;
 });
 
 const annulithToPulls = computed(() => Math.floor(currency.state.annulith / 160));
@@ -97,11 +107,21 @@ onMounted(() => {
                 );
             }
         }
-        if (settings.state.notifications.staminaCap && staminaWarn.value) {
+        if (settings.state.notifications.staminaCap && pixelsWarn.value) {
             fireOnce(
-                "stamina-cap",
-                "NTE — Stamina capping soon",
-                `Spend Character Pixels by ${spendBy.value} or you'll start losing regen.`,
+                "pixels-cap",
+                "NTE — Character Pixels capping soon",
+                `Spend Pixels by ${pixelsSpendBy.value} or you'll start losing regen.`,
+            );
+        }
+        if (
+            settings.state.notifications.weeklyReset &&
+            citySpendCritical.value
+        ) {
+            fireOnce(
+                "city-stamina-12h",
+                "NTE — City Stamina expiring",
+                `${user.profile.cityStamina.current} City Stamina will reset on Monday. Spend on City Delivery for Fons!`,
             );
         }
     }, 60_000);
@@ -170,26 +190,54 @@ onUnmounted(() => {
             </div>
         </GlassPanel>
 
-        <!-- Stamina warning -->
-        <GlassPanel title="Character Pixels (Stamina)">
-            <div class="flex items-center justify-between gap-4 flex-wrap">
-                <div class="flex items-center gap-3">
-                    <input type="number" min="0" :max="user.profile.stamina.cap" class="input w-24"
-                        v-model.number="user.profile.stamina.current" />
-                    <span class="text-nte-muted">/ {{ user.profile.stamina.cap }}</span>
+        <!-- Stamina resources -->
+        <div class="grid md:grid-cols-2 gap-4">
+            <GlassPanel title="Character Pixels" subtitle="Combat stamina — regens 6 min/point.">
+                <div class="flex items-center justify-between gap-4 flex-wrap">
+                    <div class="flex items-center gap-3">
+                        <input type="number" min="0" :max="user.profile.characterPixels.cap" class="input w-24"
+                            v-model.number="user.profile.characterPixels.current" />
+                        <span class="text-nte-muted">/ {{ user.profile.characterPixels.cap }}</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-nte-muted uppercase tracking-wider">Caps in</div>
+                        <div class="font-display text-xl tabular-nums"
+                            :class="pixelsWarn ? 'text-nte-rose' : 'text-nte-cyan'">{{ pixelsHoursToCap.toFixed(1) }}h
+                        </div>
+                        <div class="text-[11px] text-nte-muted">spend by ~{{ pixelsSpendBy }}</div>
+                    </div>
                 </div>
-                <div class="text-right">
-                    <div class="text-xs text-nte-muted uppercase tracking-wider">Caps in</div>
-                    <div class="font-display text-xl tabular-nums"
-                        :class="staminaWarn ? 'text-nte-rose' : 'text-nte-cyan'">{{ hoursToCap.toFixed(1) }}h</div>
-                    <div class="text-[11px] text-nte-muted">spend by ~{{ spendBy }}</div>
+                <div v-if="pixelsWarn"
+                    class="mt-3 p-2 rounded-lg border border-nte-rose/50 bg-nte-rose/10 text-sm text-nte-rose">
+                    Pixels will cap soon — log in and spend them to keep regen flowing.
                 </div>
-            </div>
-            <div v-if="staminaWarn"
-                class="mt-3 p-2 rounded-lg border border-nte-rose/50 bg-nte-rose/10 text-sm text-nte-rose">
-                Stamina will cap soon — log in and spend your Pixels to keep them generating.
-            </div>
-        </GlassPanel>
+            </GlassPanel>
+
+            <GlassPanel title="City Stamina" subtitle="Weekly — no daily regen, resets Monday.">
+                <div class="flex items-center justify-between gap-4 flex-wrap">
+                    <div class="flex items-center gap-3">
+                        <input type="number" min="0" :max="user.profile.cityStamina.cap" class="input w-24"
+                            v-model.number="user.profile.cityStamina.current" />
+                        <span class="text-nte-muted">/ {{ user.profile.cityStamina.cap }}</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-nte-muted uppercase tracking-wider">Resets in</div>
+                        <div class="font-display text-xl tabular-nums"
+                            :class="citySpendCritical ? 'text-nte-rose' : 'text-nte-violet-soft'">{{
+                            weeklyTimer.display.value }}</div>
+                        <div class="text-[11px] text-nte-muted">1 Stamina ≈ 1,000 Fons</div>
+                    </div>
+                </div>
+                <div class="mt-3 h-2 rounded-full bg-nte-bg-2 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-nte-violet to-nte-magenta"
+                        :style="{ width: cityStaminaPct + '%' }"></div>
+                </div>
+                <div v-if="citySpendCritical"
+                    class="mt-3 p-2 rounded-lg border border-nte-rose/50 bg-nte-rose/10 text-sm text-nte-rose">
+                    Spend your City Stamina before weekly reset — unused points are lost.
+                </div>
+            </GlassPanel>
+        </div>
 
         <!-- Currency snapshot + codes -->
         <div class="grid md:grid-cols-2 gap-4">
@@ -219,7 +267,7 @@ onUnmounted(() => {
                 <div v-else class="flex flex-wrap gap-2">
                     <span v-for="c in unclaimedCodes.slice(0, 8)" :key="c.code"
                         class="font-mono text-xs px-2 py-1 rounded-md bg-nte-cyan/10 text-nte-cyan border border-nte-cyan/30">{{
-                        c.code }}</span>
+                            c.code }}</span>
                 </div>
                 <button class="btn btn-ghost mt-3" @click="router.push({ name: 'currencies' })">Manage codes →</button>
             </GlassPanel>

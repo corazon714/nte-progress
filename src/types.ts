@@ -69,7 +69,13 @@ export interface UserProfile {
     tycoonLevel: number;
     ownedCharacters: OwnedCharacter[];
     ownedArcs: string[];
-    stamina: {
+    /** Character Pixels — regenerating combat stamina (6 min/point, base cap 240). */
+    characterPixels: {
+        current: number;
+        cap: number;
+    };
+    /** City Stamina — weekly resource that does NOT regen daily and resets Monday. */
+    cityStamina: {
         current: number;
         cap: number;
     };
@@ -95,6 +101,8 @@ export interface CurrencyState {
     };
     /** code -> claimed */
     claimedCodes: Record<string, boolean>;
+    /** Weekly Annulith income samples. weekStartIso is Monday 00:00 of that week (local). */
+    incomeLog: Array<{ weekStartIso: string; gained: number }>;
 }
 
 export interface ChecklistState {
