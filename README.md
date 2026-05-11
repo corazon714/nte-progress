@@ -112,24 +112,18 @@ pnpm exec tauri icon src-tauri/icons/app-icon.png
 
 ## Releasing
 
-CI is split into two workflows:
-
-- [.github/workflows/ci.yml](.github/workflows/ci.yml) — runs on every push/PR to `main` and `dev`. Typechecks the frontend (`vue-tsc`), builds with Vite, and runs `cargo check` against the Tauri shell.
-- [.github/workflows/release.yml](.github/workflows/release.yml) — triggered when you push a tag matching `v*`. Builds installers for Windows, macOS (universal), and Linux in parallel, then drafts a GitHub Release with all artifacts attached.
-
-To cut a new release:
+Local build → upload to GitHub Releases manually.
 
 ```sh
 pnpm release 0.2.0          # bumps package.json, tauri.conf.json, Cargo.toml + Cargo.lock
+pnpm tauri build            # produces installers in src-tauri/target/release/bundle/
 git add -A
 git commit -m "chore: release v0.2.0"
 git tag v0.2.0
 git push && git push --tags
 ```
 
-Then watch **Actions → Release**. When all three platforms finish (~10 min), go to **Releases**, open the draft, write release notes, and click **Publish release**.
-
-> First time only: the workflow needs `contents: write` permission, which is granted via the `permissions:` block in [release.yml](.github/workflows/release.yml). No secrets to configure — `GITHUB_TOKEN` is provided automatically.
+Then on GitHub: **Releases → Draft a new release**, pick the tag, drag in the installers from `src-tauri/target/release/bundle/` (`.msi`, `.exe`, `.dmg`, `.deb`, `.AppImage` depending on platform), publish.
 
 ---
 
