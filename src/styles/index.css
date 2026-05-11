@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nte-bg: #0a0612;
+  --color-nte-bg-2: #0f0a1f;
+  --color-nte-surface: #15102b;
+  --color-nte-surface-2: #1d1740;
+  --color-nte-border: #2a2152;
+  --color-nte-violet: #7d4bff;
+  --color-nte-violet-soft: #a98bff;
+  --color-nte-cyan: #39e7ff;
+  --color-nte-magenta: #ff4ddb;
+  --color-nte-gold: #f5c451;
+  --color-nte-rose: #ff6b8a;
+  --color-nte-text: #e9e6ff;
+  --color-nte-muted: #8b85b8;
+
+  --color-prio-critical: #39a8ff;
+  --color-prio-high: #4ade80;
+  --color-prio-medium: #f5c451;
+  --color-prio-optional: #cfcce0;
+
+  --font-display: "Rajdhani", "Orbitron", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1000px 600px at 80% -10%, rgba(125, 75, 255, 0.18), transparent 60%),
+      radial-gradient(800px 500px at -10% 90%, rgba(57, 231, 255, 0.12), transparent 60%),
+      var(--color-nte-bg);
+    color: var(--color-nte-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-nte-surface-2);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-nte-violet);
+  }
+}
+
+@layer components {
+  .glass {
+    background: linear-gradient(
+      135deg,
+      rgba(29, 23, 64, 0.65) 0%,
+      rgba(21, 16, 43, 0.55) 100%
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(125, 75, 255, 0.25);
+    border-radius: 14px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 12px 30px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-strong {
+    background: rgba(15, 10, 31, 0.85);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(125, 75, 255, 0.4);
+    border-radius: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    user-select: none;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-nte-violet), var(--color-nte-magenta));
+    color: white;
+    box-shadow: 0 8px 24px -10px rgba(255, 77, 219, 0.6);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px -10px rgba(255, 77, 219, 0.8);
+  }
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-ghost {
+    background: rgba(125, 75, 255, 0.08);
+    color: var(--color-nte-text);
+    border-color: rgba(125, 75, 255, 0.3);
+  }
+  .btn-ghost:hover {
+    background: rgba(125, 75, 255, 0.18);
+    border-color: var(--color-nte-violet);
+  }
+
+  .input {
+    width: 100%;
+    background: rgba(10, 6, 18, 0.6);
+    border: 1px solid var(--color-nte-border);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    color: var(--color-nte-text);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .input:focus {
+    outline: none;
+    border-color: var(--color-nte-cyan);
+    box-shadow: 0 0 0 3px rgba(57, 231, 255, 0.18);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid currentColor;
+    background: rgba(125, 75, 255, 0.08);
+  }
+
+  .neon-text {
+    text-shadow:
+      0 0 6px rgba(57, 231, 255, 0.6),
+      0 0 16px rgba(125, 75, 255, 0.4);
+  }
+}

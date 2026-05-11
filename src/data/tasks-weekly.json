@@ -1,0 +1,106 @@
+[
+    {
+        "id": "anomaly_pilgrimage",
+        "title": "Anomaly Pilgrimage — 3 weekly bosses",
+        "scope": "weekly",
+        "priority": "critical",
+        "description": "Hard cap 3 attempts/week. Drops Esper Skill upgrade materials — the rarest endgame resource. Never skip.",
+        "rewards": [
+            "Esper Skill materials"
+        ]
+    },
+    {
+        "id": "city_stamina",
+        "title": "Spend ALL City Stamina",
+        "scope": "weekly",
+        "priority": "critical",
+        "description": "Resets Monday — does NOT regen daily. 1 Stamina = 1,000 Fons. Best activity = City Delivery.",
+        "rewards": [
+            "Up to 700,000 Fons"
+        ]
+    },
+    {
+        "id": "pink_paws",
+        "title": "Pink Paws Heist (1M Fons cap)",
+        "scope": "weekly",
+        "priority": "critical",
+        "description": "Resets every 14 days, not weekly. Free of City Stamina. ~150k Fons + 600 Popper + 950 Pink Paws Credits per run.",
+        "rewards": [
+            "Up to 1,000,000 Fons",
+            "Pink Paws Credits"
+        ]
+    },
+    {
+        "id": "old_mailbox",
+        "title": "Old Mailbox special delivery",
+        "scope": "weekly",
+        "priority": "high",
+        "description": "Free Fons commission scaled to your level — costs no City Stamina. Upgrade mailbox for higher payout.",
+        "rewards": [
+            "Fons (scaled)"
+        ]
+    },
+    {
+        "id": "realm_of_greed",
+        "title": "Realm of Greed (Mammon)",
+        "scope": "weekly",
+        "priority": "high",
+        "description": "Requires Wiener Apartment + Blind Mammon. Up to 100k Fons/week, scales with level.",
+        "rewards": [
+            "Up to 100,000 Fons"
+        ]
+    },
+    {
+        "id": "auction_house",
+        "title": "Ebisu's Auction House",
+        "scope": "weekly",
+        "priority": "high",
+        "description": "New Herland District. Buy Gluttonous Eyes & Covetous Coins for Mammon upgrade. No reminder — visit manually.",
+        "rewards": [
+            "Mammon upgrade items"
+        ]
+    },
+    {
+        "id": "anomaly_commissions",
+        "title": "Anomaly Commissions (full set)",
+        "scope": "weekly",
+        "priority": "high",
+        "description": "Full set = 15k Fons + side materials. Each first clear gives 10–60 Annulith.",
+        "rewards": [
+            "15,000 Fons",
+            "Annulith",
+            "Materials"
+        ]
+    },
+    {
+        "id": "beyond_rails",
+        "title": "Beyond the Rails — Special Routes",
+        "scope": "weekly",
+        "priority": "medium",
+        "description": "Train station, north Miguel District. ~Lvl 60 enemies. Resets every 14 days. Up to 30 Platform Seals → big Annulith source.",
+        "rewards": [
+            "Annulith",
+            "Train Logs"
+        ]
+    },
+    {
+        "id": "guild_boss",
+        "title": "Guild Boss",
+        "scope": "weekly",
+        "priority": "medium",
+        "description": "Coordinate with guild. Missing wastes contributions and drops.",
+        "rewards": [
+            "Guild materials"
+        ]
+    },
+    {
+        "id": "field_boss",
+        "title": "Field Boss",
+        "scope": "weekly",
+        "priority": "medium",
+        "description": "Weekly field boss for materials. Scales with Appraisal Level.",
+        "rewards": [
+            "Boss materials"
+        ]
+    }
+]

@@ -1,0 +1,78 @@
+[
+    {
+        "id": "raging_flames",
+        "name": "Raging Flames",
+        "rarity": "S",
+        "element": "Anima",
+        "bestFor": [
+            "nanally",
+            "jiuyuan"
+        ]
+    },
+    {
+        "id": "cosmos_dps",
+        "name": "Stellar Drift",
+        "rarity": "S",
+        "element": "Cosmos",
+        "bestFor": [
+            "chiz",
+            "esper_zero"
+        ]
+    },
+    {
+        "id": "incant_dot",
+        "name": "Embered Sigil",
+        "rarity": "S",
+        "element": "Incantation",
+        "bestFor": [
+            "baicang",
+            "adler"
+        ]
+    },
+    {
+        "id": "support_atk",
+        "name": "Conductor's Mark",
+        "rarity": "S",
+        "bestFor": [
+            "sakiri",
+            "haniel"
+        ]
+    },
+    {
+        "id": "psyche_dps",
+        "name": "Mind's Edge",
+        "rarity": "S",
+        "element": "Psyche",
+        "bestFor": [
+            "fadia",
+            "haniel",
+            "aurelia"
+        ]
+    },
+    {
+        "id": "lakshana_dps",
+        "name": "Goldenchain",
+        "rarity": "S",
+        "element": "Lakshana",
+        "bestFor": [
+            "hathor",
+            "skia"
+        ]
+    },
+    {
+        "id": "chaos_dps",
+        "name": "Veiled Curse",
+        "rarity": "S",
+        "element": "Chaos",
+        "bestFor": [
+            "daffodill",
+            "lacrimosa"
+        ]
+    },
+    {
+        "id": "your_happiness",
+        "name": "Your Happiness is Priceless",
+        "rarity": "S",
+        "bestFor": []
+    }
+]

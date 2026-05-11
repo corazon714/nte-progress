@@ -12,9 +12,11 @@
   "app": {
     "windows": [
       {
-        "title": "nte-progress",
-        "width": 800,
-        "height": 600
+        "title": "NTE Progress",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 1024,
+        "minHeight": 680
       }
     ],
     "security": {
